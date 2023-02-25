@@ -1,0 +1,38 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_DEBUG: 1
+      SECRET_KEY: Server One
+      FLASK_APP: service.py
+    command: flask run --host=0.0.0.0
+  web2:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      FLASK_DEBUG: 1
+      SECRET_KEY: Server Two
+      FLASK_APP: service.py
+    command: flask run --host=0.0.0.0
+  web3:
+    build: .
+    ports:
+      - "5002:5000"
+    environment:
+      FLASK_DEBUG: 1
+      SECRET_KEY: Server Three
+      FLASK_APP: service.py
+    command: flask run --host=0.0.0.0
+  web4:
+    build: .
+    ports:
+      - "5003:5000"
+    environment:
+      FLASK_DEBUG: 1
+      SECRET_KEY: Server Four
+      FLASK_APP: service.py
+    command: flask run --host=0.0.0.0 --port=5000
