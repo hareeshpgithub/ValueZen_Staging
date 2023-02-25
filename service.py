@@ -3,10 +3,10 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/jenkins')
+@app.route('/staging')
 def home():
     my_custom_var = os.environ.get('SECRET_KEY')
-    return 'Hello, World! 234!'  + my_custom_var
+    return 'This is a Staging Server, Server Details: '  + my_custom_var
 
 if __name__ == '__main__':
     app.run()
